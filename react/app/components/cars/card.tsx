@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { Car } from '../../lib/types/types';
 
 type Props = {
@@ -6,7 +7,17 @@ type Props = {
 }
 
 export default function Card({ car }: Props) {
-  return (
-    <div className=" bg-amber-800 p-4">card: {car.name}</div>
+    const [isActive, setIsActive] = useState(false);
+    return (
+    <div 
+        className={`p-4 cursor-pointer ${isActive ? `bg-amber-800` : 'bg-gray-700'}`}
+        onClick={() => setIsActive(!isActive)}
+    >
+        <h2 className="text-2xl font-bold">{car.name}</h2>
+        <p className="text-sm">{car.type}</p>
+        <p className="text-sm">{car.price}</p>
+        <p className="text-sm">{car.color}</p>
+        {isActive ? "active" : "inactive"}
+    </div>
   )
 }
