@@ -1,3 +1,5 @@
+"use client"
+import { useEffect, useState } from "react";
 import CarList from "../components/cars/carList";
 import { Car } from "../lib/types/types";
 
@@ -41,7 +43,27 @@ const cars: Car[] = [
 ]
 
 export default function CarsPage() {
-  return (
-    <CarList cars={cars}/>
-  );
+    const [filteredCars, setFilteredCars] = useState<Car[]>(cars);
+    const [showAffordable, setShowAffordable] = useState(false);
+  
+    const toggleAffordableCars = () => {
+        if (showAffordable) {
+            setFilteredCars(cars); // Show all cars
+        } else {
+            const affordable = cars.filter(car => car.price < 30000);
+            setFilteredCars(affordable); // Show affordable cars
+        }
+        setShowAffordable(!showAffordable);
+    };
+  
+    return (
+        <div>
+            <button 
+                onClick={toggleAffordableCars}
+                className="ml-4 p-2 text-white hover:bg-blue-600">
+                Filter
+            </button>
+            <CarList cars={filteredCars}/>
+        </div>
+    );
 }
