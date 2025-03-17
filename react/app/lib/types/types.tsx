@@ -10,4 +10,5 @@ export interface Car {
     color: string;
     isDamaged: boolean;
     motor: Motor;
+    imageUrl: string;
 }

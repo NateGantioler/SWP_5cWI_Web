@@ -11,7 +11,8 @@ const cars: Car[] = [
         motor: {
             power: 100,
             fuel: "Diesel",
-        }
+        },
+        imageUrl: "/images/pixo.png"
     },
     {
         name: "Luxus Schlitten",
@@ -22,7 +23,8 @@ const cars: Car[] = [
         motor: {
             power: 450,
             fuel: "Gasoline",
-        }
+        },
+        imageUrl: "/images/pixo.png"
     },
     {
         name: "Stadtflitzer",
@@ -33,7 +35,8 @@ const cars: Car[] = [
         motor: {
             power: 150,
             fuel: "Hybrid",
-        }
+        },
+        imageUrl: "/images/pixo.png"
     }
 ]
 
