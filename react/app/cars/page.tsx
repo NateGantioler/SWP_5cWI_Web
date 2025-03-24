@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import CarList from "../components/cars/carList";
 import { Car } from "../lib/types/types";
 

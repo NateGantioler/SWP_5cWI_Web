@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
+// eslint-disable-next-line no-empty-pattern
 type Props = {}
 
 export default function Menu({}: Props) {
